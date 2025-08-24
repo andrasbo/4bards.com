@@ -1,0 +1,115 @@
+@import url("../style.css");
+
+:root {
+    --primary: rgb(97, 139, 82);
+    --tertiary: rgb(63, 89, 54);
+}
+
+/* page merch */
+
+#sectionLandingMerch {
+    display: block;   
+    object-fit: cover;
+    overflow: hidden; 
+    object-position: center;   
+}
+#sectionLandingMerch video {
+    /* position: absolute; */
+    z-index: -1;    
+    margin: auto;
+    overflow: hidden;
+    object-fit: cover;
+    width: 100vw;
+    width: 100svw;
+    height: 100vh;
+    height: 100svh;
+}
+#mute {
+    position: absolute;
+    right: 5vw;
+    right: 5svw;
+    bottom: 5svh;
+    z-index: 1;
+    background: none;
+    border: none;
+}
+#mute svg {
+    height: calc(var(--font-size-large) * 2);
+}
+#mute *:hover {
+    fill: none;
+    scale: 1;
+}
+#mute svg * {
+    stroke: var(--secondary);
+}
+#muteSymbol {
+    opacity: 0;
+}
+#home-icon svg {
+    fill: var(--secondary);
+}
+#hamburger line {
+    stroke: var(--secondary);
+}
+#gridMerch {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+}
+.cardMerch {
+    min-height: 0;
+    min-width: 0;
+    padding: 20px;
+    margin: 10px;
+    opacity: 0.3;
+    background-color: var(--secondary);   
+    border: 1px solid var(--primary);
+    border-radius: 10px;    
+}
+.cardMerch img {
+    width: 100%;
+    border-radius: 10px;
+}
+.cardMerch h3, .cardMerch p {
+    text-align: left;   
+}
+.cardMerch div {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    gap: 10px;
+}
+.cardMerch input {
+    width: 100%;
+}
+.cardMerch button {
+    width: 100%;
+    border: 0px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+.cardMerch button:hover {
+    background-color: var(--tertiary);
+    color: var(--secondary);
+}
+
+@media screen and (max-width: 1000px) {
+    #gridMerch {
+        grid-template-columns: auto auto;
+    }
+}
+@media screen and (max-width: 768px) {
+    #hamburger line:hover {
+        stroke: var(--secondary);
+    }
+    #mute svg {
+        height: calc(var(--font-size-large));
+    }    
+}
+@media screen and (max-width: 500px) {
+    #gridMerch {
+        grid-template-columns: auto;
+    }
+}

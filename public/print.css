@@ -1,0 +1,59 @@
+@media print
+{
+    :root {    
+        --inline-padding: 15vw;
+        --inline-padding: 15svw; 
+        --block-padding: 1svh;
+    
+        --primary: rgb(0, 0, 0);
+        --secondary: rgb(0, 0, 0);
+        --tertiary: rgb(0, 0, 0);
+    
+        --font-main: 1rem;
+        --font-large: 1.25rem;
+
+    }
+    * {
+        text-align: left;
+        margin: 0;
+    }
+    header, footer, iframe, .arrowButton, svg {
+        display: none;
+    }
+    .sectionLanding {
+        background: none;
+        height: auto;
+    }
+    h1 {
+        font-size: 2rem;
+        position: static;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    #sectionReleases h2 {
+        text-align: left;
+    }
+    img {
+        scale: 0.6;
+    }
+    a {
+        text-decoration: none;
+    }
+    a[href]:after{
+        content: " [" attr(href) "] ";
+        text-decoration: underline;
+    }
+    .concert {
+        display: block;       
+        border: none;
+    }
+    .concert * {
+        display: block;
+        padding: 0;
+    }
+    .iconLinks {
+        display: block;
+    }
+
+}

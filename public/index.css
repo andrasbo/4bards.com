@@ -1,0 +1,196 @@
+@import url("./style.css");
+
+/* page index */
+
+#sectionLandingIndex {
+    background-image: url(./media/backgrounds/4b1_2x1_thumbnail.png);
+    background-image: url(./media/backgrounds/4b2_vertical_thumbnail.png);
+}
+#sectionLandingIndex h1 {
+    left: auto;
+    right: var(--inline-padding);
+}
+.buttonPrev, .buttonNext {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    line-height: 0;
+}
+.leftArrow, .rightArrow {
+    margin: 1rem;
+    z-index: 0;
+    height: 6.25rem;
+    width: 3.125rem;
+}
+.leftArrow:hover, .rightArrow:hover {
+    scale: 1;
+}
+.leftArrow:hover *, .rightArrow:hover * {
+    fill: var(--tertiary);
+}
+
+
+/* sectionConcerts */
+
+.concert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block: 10px;
+    border-radius: 50px;  
+    border: 1px solid var(--primary);
+    transition-duration: 100ms;
+}
+.concert * {
+    transition-duration: 0ms;
+}
+.concert:hover {   
+    scale: 1.05;
+    background-color: var(--primary);
+    border-color: transparent;
+}
+.concert:hover * {
+    color: var(--secondary);
+}
+.concertEvent, .concertTicket {
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.concertEvent {
+    width: 100%;
+    padding-right: 0;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+/* sectionReleases */
+
+#sectionReleases h2 {
+    text-align: center;
+}
+#carouselReleases {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#carouselReleases div {
+    text-align: center;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #1f1f1f; 
+}
+#currIframeReleases {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* sectionAbout */
+
+#sectionAbout {
+    padding-inline: var(--inline-padding);
+    text-align: left;
+}
+#layoutAbout {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#layoutAbout p {
+    display: inline;
+    text-align: justify;
+    padding-right: var(--block-padding);
+    width: 100%;
+}
+#carouselAbout {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+#carouselAbout img {
+    position: relative;
+    width: 20svw;
+    height: 20svw;  
+    border-radius: 20px;
+    object-fit: cover;
+    z-index: 1;
+    background-color: var(--primary);
+}
+
+/* sectionVideos */
+
+#sectionVideos {
+    text-align: center;
+}
+#layoutVideos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#layoutVideos iframe {
+    --iframe-width: 50svw;
+    --iframe-height: calc(var(--iframe-width)*0.5625);
+    width: var(--iframe-width);
+    height: var(--iframe-height);
+    border-radius: 12px;
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+    #carouselReleases {
+        padding-inline: 1rem;
+    }
+    #layoutAbout {
+        grid-template-columns: auto;
+        gap: 1rem;
+    }
+    #layoutAbout p {
+        padding: 0;
+    }
+    #layoutAbout img {
+        width: 50svw;
+        height: 50svw;
+    }
+    #layoutVideos iframe {
+        --iframe-width: 80svw;
+        --iframe-height: calc(var(--iframe-width)*0.5625);
+        width: var(--iframe-width);
+        height: var(--iframe-height);    
+    }
+}
+@media screen and (max-width: 768px) {
+    #hamburger line:hover {
+        stroke: var(--primary);
+    }    
+    nav a {
+        background-color: var(--secondary);
+        padding-right: 1rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    #carouselReleases, #carouselAbout, #layoutVideos {
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-inline: 0;
+    }
+    #layoutAbout {
+        gap: 0;
+    }
+    .buttonPrev, .buttonNext {
+        rotate: 90deg;
+    }
+    .leftArrow, .rightArrow {
+        margin: 0;
+    }
+    .leftArrow, .rightArrow {
+        height: 3.125rem;
+        width: 1.5625rem;
+    }
+}
+@media screen and (max-aspect-ratio: 4/3) {
+    #sectionLandingIndex {
+    background-image: url(./media/backgrounds/4b2_vertical_thumbnail.png);
+    }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../media/icons/4b-logo-poly-bg-rect.svg" type="image/svg+xml">
+    <title>4bards | admin</title>
+    <style>
+        @import url("../style.css");
+
+        section {
+            text-align: center;
+            padding-top: 100px;
+        }
+        h2, h3 {
+            color: var(--primary);
+        }
+        h3 {
+            padding: 20px;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            text-align: left;
+        }
+        #eventEditor, #spotifyEditor, #youtubeEditor {
+            padding-bottom: 40px;
+            max-width: 275px;
+            margin: auto;
+        }
+        input, button {
+            border-radius: 5px;
+            border: solid black 1px;
+            margin: 10px auto;
+        }
+        input {
+            width: 100%;
+        }
+        button {
+            color: black;
+            background-color: white;
+            padding: 5px;
+        }
+        .saveButton {
+            background-color:rgb(213 255 190);
+        }
+        .cancelButton {
+            background-color:rgb(255, 175, 175);
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        table { 
+            border-collapse: collapse; 
+            table-layout: fixed; 
+            text-align: left;
+            width: 100%;
+        }
+        table td {  
+            word-wrap: break-word; 
+        } 
+        @media screen and (max-width: 500px) {
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body style="display: none;">    
+    <section>
+        <h2>Bejelentkezve</h2>
+        <p id="username"></p>
+        <button type="button" id="logoutButton">Kijelentkezés</button>        
+        <h3>Események</h3>
+        <table id="eventsTable">
+            <tr>
+                <th></th>
+                <th style="width: 32px;"></th>
+                <th style="width: 32px;"></th>
+                <th style="width: 32px;"></th>
+                <th style="width: 32px;"></th>                
+            </tr>
+            <tbody id="eventsList"></tbody>
+        </table>
+        <hr>
+        <button type="button" id="addEventButton" onclick="openEventEditor(0)">Új esemény</button>
+        <div id="eventEditor" style="display:none;">
+            <form id="editEventForm">
+                <label for="date">dátum (YYYYMMDD)</label><input id="date" type="text" maxlength="8">
+                <label for="city">település</label><input id="city" type="text">
+                <label for="venue">helyszín</label><input id="venue" type="text">
+                <label for="facebook">facebook</label><input id="facebook" type="text">
+                <label for="tickets">jegylink (ingyenes / link)</label><input id="tickets" type="text">
+                <button type="submit" id="saveEvent" class="saveButton"/>mentés</button>
+                <button type="reset" id="cancelEvent" class="cancelButton"/>mégsem</button>
+            </form>            
+        </div>
+        <h3>Releasek</h3>
+        <hr>
+        <table>
+            <tr>
+                <th style="width: 1rem;"></th>
+                <th></th>
+                <th style="width: 32px;"></th>
+                <th style="width: 32px;"></th>
+                <th style="width: 32px;"></th>                
+            </tr>
+            <tbody id="spotifyList"></tbody>
+        </table>
+        <hr>
+        <button type="button" id="addSpotifyButton" onclick="openSpotifyEditor(0)">Új release</button>
+        <div id="spotifyEditor" style="display:none;">
+            <form id="editSpotifyForm">
+                <label for="index">index</label><input id="index" type="number">
+                <label for="title">cím</label><input id="title" type="text">
+                <label for="link">embed link</label><input id="link" type="text">
+                <button type="submit" id="saveSpotify" class="saveButton"/>mentés</button>
+                <button type="reset" id="cancelSpotify" class="cancelButton"/>mégsem</button>
+            </form>            
+        </div>
+        <h3>Youtube videók</h3>
+        <hr>
+        <table>
+            <tr>
+                <th style="width: 1rem;"></th>
+                <th></th>
+                <th style="width: 32px;"></th>
+                <th style="width: 32px;"></th>
+                <th style="width: 32px;"></th>                
+            </tr>
+            <tbody id="youtubeList"></tbody>
+        </table>
+        <hr>
+        <button type="button" id="addYoutubeButton" onclick="openYoutubeEditor(0)">Új videó</button>
+        <div id="youtubeEditor" style="display:none;">
+            <form id="editYoutubeForm">
+                <label for="index">index</label><input id="index" type="number">
+                <label for="title">cím</label><input id="title" type="text">
+                <label for="link">embed link</label><input id="link" type="text">
+                <button type="submit" id="saveYoutube" class="saveButton"/>mentés</button>
+                <button type="reset" id="cancelYoutube" class="cancelButton"/>mégsem</button>
+            </form>            
+        </div>
+    </section>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="../init-firebase.js"></script>
+<script src="./admin.js"></script>
+<script src="./adminEvents.js"></script>
+<script src="./adminSpotify.js"></script>
+<script src="./adminYoutube.js"></script>
+
+</html>

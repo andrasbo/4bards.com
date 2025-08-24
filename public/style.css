@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300..700&display=swap');
+
+:root {    
+    --inline-padding: 15vw;
+    --inline-padding: 15svw;
+    --block-padding: 6svh;
+
+    --primary: rgb(146, 114, 95);
+    --secondary: rgb(255, 255, 255);
+    --tertiary: rgb(78, 64, 55);
+
+    --font-family-display: "Bebas Neue";
+    --font-family-text: "Quicksand";
+
+    --font-size-h1: 12.5rem;   
+    --font-size-h2: 3.75rem; 
+    --font-size-large: 2rem;
+    --font-size-h3: 1.2rem;            
+    --font-size-main: 1rem;
+    --font-size-small: 0.8rem;
+}
+
+
+
+/* global */
+
+* {
+    transition-duration: 300ms;
+    font-family: var(--font-family-text);
+    font-size: var(--font-size-main);
+    margin: 0;
+}
+
+section, article {
+    padding-inline: var(--inline-padding);
+    padding-block: var(--block-padding);
+}
+.fadeIn {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;    
+}
+@keyframes fade-in {
+    to {opacity: 1; transform: translateY(0);}
+}
+.section-landing {
+    height: 100vh;
+    height: 100svh;
+    padding: 0px;
+    overflow: hidden; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.section-light {    
+    background-color: var(--secondary);
+}
+.section-light * {
+    color: var(--primary); 
+    fill: var(--primary);
+}
+.section-dark {
+    background-color: var(--primary);
+}
+.section-dark * {
+    color: var(--secondary);
+    fill: var(--secondary);
+}
+.color-light, .color-light *, .color-light:hover, .color-light *:hover {
+    color: var(--secondary);
+}
+.color-dark, .color-dark * {
+    color: var(--primary);
+}
+
+
+h1, h2 {
+    font-family: var(--font-family-display);
+}
+h1 { 
+    font-size: var(--font-size-h1);
+    position: absolute;
+    left: var(--inline-padding);
+    bottom: 0;
+}
+h2 {
+    font-size: var(--font-size-h2);
+    padding-bottom: 20px;
+}
+h3 {
+    font-size: var(--font-size-h3);
+}
+header {
+    display: block;
+    position: absolute;
+    padding-top: 5vh;
+    padding-top: 5svh;
+    padding-inline: 5vw;
+    padding-inline: 5svw;
+    z-index: 2;
+}
+#menu {
+    line-height: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+#hamburger {
+    height: var(--font-size-large);
+}
+#hamburger:hover {
+    scale: 1;
+}
+#hamburger line {
+    stroke: var(--primary);
+}
+nav a {   
+    display: block;
+    text-decoration: none;
+    font-size: var(--font-size-large);
+    opacity: 0;
+    transform: translateX(-200%);
+}
+#jump-to-content {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    color: transparent;
+}
+#jump-to-content:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    color: initial;
+}
+footer {
+    padding-block: 10vh;
+    padding-block: 10svh;
+    text-align: center;
+    z-index: -1;
+}
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+svg:hover, header a:hover, .concert:hover, .cardMerch:hover {
+    scale: 1.1;
+    cursor: pointer;
+    z-index: 1;
+}
+a:hover, .iconLinks li:hover * {
+    color: var(--tertiary);
+    fill: var(--tertiary);
+}
+iframe {
+    border: none;
+    z-index: 1;
+}
+
+/* sectionLinks */
+
+#sectionLinks {
+    text-align: center;
+    padding-bottom: 0px;
+}
+.iconLinks {
+    display: flex;
+    justify-content: center;
+}
+#sectionLinks h2 {
+    padding-bottom: 0;
+}
+#sectionLinks .iconLinks li {
+    padding-inline: 20px;
+}
+#sectionLinks ul {
+    padding-block: 20px;
+}
+#sectionLinks .contacts li {
+    padding-block: 5px;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    :root {
+        --font-h1: 10rem;
+    }
+    h2 {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 768px) {
+    :root {
+        --inline-padding: 10vw;
+        --inline-padding: 10svw;
+
+        --font-size-h1: 30vw;
+    }
+    header {
+        right: 0;
+        text-align: end;
+        overflow: hidden;
+    }
+    header * {
+        text-align: end;
+    }
+    nav a {
+        font-size: calc(var(--font-size-main) * 2);
+        transform: translateX(200%);
+    }
+    #sectionLinks .iconLinks li {
+        padding-inline: 0.5rem;
+    }
+}
+
+

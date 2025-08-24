@@ -1,0 +1,63 @@
+@import url("../style.css");
+
+:root {
+    --primary: rgb(215, 78, 99);
+    --tertiary: rgb(143, 53, 66);
+}
+
+/* page contact */
+
+#sectionLandingContact {   
+    background-image: url("../media/backgrounds/kapcsolat.jpg");
+}
+#hamburger line {
+    stroke: var(--secondary);
+}
+#gridContact {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.cardContact {
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.cardContact * {
+    color: var(--secondary);
+    color: var(--primary);
+}
+.cardContact p {
+    padding-bottom: 5px;
+}
+.cardContact img {
+    max-width: 20vh;
+    max-width: 20svh;
+    max-height: 20vh;
+    max-height: 20svh;
+    border-radius: 50%;
+}
+details p {
+    text-align: justify;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    #gridContact {
+        grid-template-columns: auto;
+    }    
+}
+@media screen and (max-width: 768px) {
+    :root {
+        --font-size-h1: 20vw;
+    }
+    #hamburger line:hover {
+        stroke: var(--secondary);
+    }    
+    nav a {
+        background-color: var(--primary);
+        padding-inline: 1rem;  
+    }
+}
