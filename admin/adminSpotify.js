@@ -28,7 +28,7 @@ const setupSpotify = (docs) => {
                     </button>
                 </td>
                 <td>
-                    <button type="button" id="deleteButton${i}" onclick="db.collection('spotify').doc('${doc.id}').delete().then(() => {location.reload()})"/>
+                    <button type="button" id="deleteButton${i}" onclick="deleteSpotify('${doc.id}')"/>
                         <img src="./icons/delete.svg" style="width: 16px; height: 16px;">    
                     </button>
                 </td>                
@@ -88,4 +88,10 @@ function openSpotifyEditor(i) {
     editForm.addEventListener("reset", () => {
         eventEditor.style.display = "none";   
     });
+}
+
+function deleteSpotify(id) {
+    db.collection('spotify').doc(id).delete()
+    .catch(() => {window.alert("Szupertitkos akció. Hozzáférés megtagadva!")})
+    .then(() => {location.reload()}); 
 }

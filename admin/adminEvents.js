@@ -23,34 +23,18 @@ const setupEvents = (docs) => {
                 default : return `<a href=${event.tickets} target="_blank"><img src='./icons/ticketYellow.svg' style='width: 24px; height: 24px;'></a>`
             }            
         }
-        
-        const li = `
-            <hr>
-            <li class="event" data-id="${doc.id}" data-date="${event.date}" data-city="${event.city}" data-venue="${event.venue}" data-facebook="${event.facebook}" data-tickets="${event.tickets}">
-                <div>${yyyy}/${mm}/${dd} - ${event.city} (${event.venue})</div>
-                <span class="eventButtons">
-                    ${tickets()} ${facebook}
-                    <button type="button" id="editEventButton${i}" onclick="openEventEditor(${i})" style="margin: 10px 0;"/>
-                        <img src="./icons/edit.svg" style="width: 16px; height: 16px;">
-                    </button>
-                    <button type="button" id="deleteButton${i}" onclick="db.collection('events').doc('${doc.id}').delete().then(() => {location.reload()})" style="margin: 10px 0;"/>
-                        <img src="./icons/delete.svg" style="width: 16px; height: 16px;">
-                    </button>                 
-                </span>  
-            </li>
-        `;
         const tr = `
             <tr class="event" data-id="${doc.id}" data-date="${event.date}" data-city="${event.city}" data-venue="${event.venue}" data-facebook="${event.facebook}" data-tickets="${event.tickets}">
                 <td>${yyyy}/${mm}/${dd} - ${event.city} (${event.venue})</td>
                 <td>${tickets()}</td>
                 <td>${facebook}</td>
                 <td>
-                    <button type="button" id="editEventButton${i}" onclick="openEventEditor(${i})" style="margin: 10px 0;"/>
+                    <button type="button" id="editEventButton${i}" onclick="openEventEditor(${i})"/>
                         <img src="./icons/edit.svg" style="width: 16px; height: 16px;">
                     </button> 
                 </td>
                 <td>
-                    <button type="button" id="deleteButton${i}" onclick="db.collection('events').doc('${doc.id}').delete().then(() => {location.reload()})" style="margin: 10px 0;"/>
+                    <button type="button" id="deleteButton${i}" onclick="deleteEvent('${doc.id}')"/>
                         <img src="./icons/delete.svg" style="width: 16px; height: 16px;">
                     </button>
                 </td>                
@@ -118,4 +102,10 @@ function openEventEditor(i) {
     editForm.addEventListener("reset", () => {
         eventEditor.style.display = "none";   
     });
+}
+
+function deleteEvent(id) {
+    db.collection('events').doc(id).delete()
+    .catch(() => {window.alert("Szupertitkos akció. Hozzáférés megtagadva!")})
+    .then(() => {location.reload()}); 
 }

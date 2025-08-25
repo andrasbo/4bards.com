@@ -28,7 +28,7 @@ const setupYoutube = (docs) => {
                     </button>
                 </td>
                 <td>
-                    <button type="button" id="deleteButton${i}" onclick="db.collection('youtube').doc('${doc.id}').delete().then(() => {location.reload()})"/>
+                    <button type="button" id="deleteButton${i}" onclick="deleteYoutube('${doc.id}')"/>
                         <img src="./icons/delete.svg" style="width: 16px; height: 16px;">    
                     </button>
                 </td>                
@@ -88,4 +88,10 @@ function openYoutubeEditor(i) {
     editForm.addEventListener("reset", () => {
         eventEditor.style.display = "none";   
     });
+}
+
+function deleteYoutube(id) {
+    db.collection('youtube').doc(id).delete()
+    .catch(() => {window.alert("Szupertitkos akció. Hozzáférés megtagadva!")})
+    .then(() => {location.reload()}); 
 }
