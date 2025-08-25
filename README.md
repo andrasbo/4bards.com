@@ -6,5 +6,5 @@
 <p>view here: <a href="https://4bards.com" target="_blank">https://4bards.com</a></p>
 <p>admin page: <a href="https://4bards.com/admin" target="_blank">https://4bards.com/admin</a></p>
 
-- email: `sneak@peak.com`
+- email: `sneak@peek.com`
 - pwd: `thisistotallysafe`
