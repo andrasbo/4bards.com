@@ -16,7 +16,7 @@
         h2 {
             color: var(--primary);
         }
-        #loginForm {
+        form {
             padding: 40px;
             background-color: var(--primary);
             max-width: 275px;
@@ -38,7 +38,7 @@
             h2 {
                 font-size: 2rem;
             }
-            #loginForm {
+            form {
                 background: none;
             }
             button {
@@ -50,9 +50,9 @@
 </head>
 
 <body>
-    <section id="loggedOutView">
+    <section>
         <h2>Kijelentkezve</h2>
-        <form id="loginForm">
+        <form>
             <input id="email" type="email" placeholder="email" name="email" required>
             <input id="pwd" type="password" placeholder="jelszó" name="pwd" required>
             <button type="submit">Belépés</button>

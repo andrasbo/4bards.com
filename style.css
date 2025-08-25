@@ -45,7 +45,7 @@ section, article {
 @keyframes fade-in {
     to {opacity: 1; transform: translateY(0);}
 }
-.section-landing {
+.sectionLanding {
     height: 100vh;
     height: 100svh;
     padding: 0px;
@@ -54,24 +54,24 @@ section, article {
     background-repeat: no-repeat;
     background-position: center;
 }
-.section-light {    
+.sectionLight {    
     background-color: var(--secondary);
 }
-.section-light * {
+.sectionLight * {
     color: var(--primary); 
     fill: var(--primary);
 }
-.section-dark {
+.sectionDark {
     background-color: var(--primary);
 }
-.section-dark * {
+.sectionDark * {
     color: var(--secondary);
     fill: var(--secondary);
 }
-.color-light, .color-light *, .color-light:hover, .color-light *:hover {
+.colorLight, .colorLight *, .colorLight:hover, .colorLight *:hover {
     color: var(--secondary);
 }
-.color-dark, .color-dark * {
+.colorDark, .colorDark * {
     color: var(--primary);
 }
 
@@ -112,6 +112,7 @@ header {
 }
 #hamburger:hover {
     scale: 1;
+    cursor: pointer;
 }
 #hamburger line {
     stroke: var(--primary);
@@ -123,20 +124,6 @@ nav a {
     opacity: 0;
     transform: translateX(-200%);
 }
-#jump-to-content {
-    position: absolute;
-    top: 0;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    color: transparent;
-}
-#jump-to-content:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    color: initial;
-}
 footer {
     padding-block: 10vh;
     padding-block: 10svh;
@@ -147,7 +134,7 @@ ul {
     list-style-type: none;
     padding-inline-start: 0px;
 }
-svg:hover, header a:hover, .concert:hover, .cardMerch:hover {
+.iconLinks svg:hover, header a:hover, .concert:hover, .cardMerch:hover {
     scale: 1.1;
     cursor: pointer;
     z-index: 1;

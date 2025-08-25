@@ -1,14 +1,18 @@
 @import url("../style.css");
 
 :root {
-    --primary: rgb(215, 78, 99);
-    --tertiary: rgb(143, 53, 66);
+    --primary: rgb(50, 71, 141);
+    --tertiary: rgb(29, 43, 90);
 }
 
 /* page contact */
 
 #sectionLandingContact {   
-    background-image: url("../media/backgrounds/kapcsolat.jpg");
+    background-image: url("../media/about/rolunk_zsombor.jpg");
+}
+section {
+    padding-inline: 30vw;
+    padding-inline: 30svw;
 }
 #hamburger line {
     stroke: var(--secondary);
@@ -44,15 +48,18 @@ details p {
     padding: 1rem;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
+    :root {
+        --font-size-h1: 20vw;
+    }
+    section {
+        padding-inline: var(--inline-padding);
+    }
     #gridContact {
         grid-template-columns: auto;
     }    
 }
 @media screen and (max-width: 768px) {
-    :root {
-        --font-size-h1: 20vw;
-    }
     #hamburger line:hover {
         stroke: var(--secondary);
     }    

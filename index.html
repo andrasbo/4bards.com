@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" media="print" href="print.css">
-    <link rel="icon" href="media/icons/4b-logo-poly-bg-rect.svg" type="image/svg+xml">
+    <link rel="icon" href="media/logos/4b-logo-poly-bg-rect.svg" type="image/svg+xml">
     <title>4bards | Kezdőlap</title>
 </head>
 
 <body>
-
-    <header class="color-dark">
+    
+    <header class="colorDark">
         <button id="menu">
             <svg id="hamburger" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
                 <line id="line1" x1="1" y1="1" x2="11" y2="1" stroke="black" stroke-linecap="round" stroke-width="2px"/>
@@ -33,16 +32,16 @@
     </header>
 
     <main id="content">
-        <section id="sectionLandingIndex" class="section-landing color-light">
+        <section id="sectionLandingIndex" class="sectionLanding colorLight">
             <h1>4Bards</h1>
         </section>
     
-        <section id="sectionConcerts" class="section-light hidden show">
+        <section id="sectionConcerts" class="sectionLight hidden show">
             <h2 class="fadeIn">Események</h2>
             <ul id="eventsList"></ul>
         </section>
     
-        <section id="sectionReleases" class="section-dark">
+        <section id="sectionReleases" class="sectionDark">
             <h2 class="fadeIn">Releasek</h2>  
             <div id="carouselReleases" class="fadeIn">
                 <button id="buttonPrevReleases" class="buttonPrev">
@@ -62,7 +61,7 @@
             </div>       
         </section>
     
-        <article id="sectionAbout" class="section-light">      
+        <article id="sectionAbout" class="sectionLight">      
             <h2 class="fadeIn">Rólunk</h2>
             <div id="layoutAbout" class="fadeIn">
                 <p>A 4Bards zenekart 2016-ban alapította négy gimnáziumi osztálytárs, akik azóta is együtt zenélnek. A <b>Debő
@@ -79,7 +78,7 @@
                     <figure>
                         <img
                             id="currImgAbout"
-                            src="./media/rolunk/rolunk_kozos.jpg"
+                            src="./media/about/rolunk_kozos.jpg"
                             alt="Kép a zenekar tagjairól">
                     </figure> 
                     <button id="buttonNextAbout" class="buttonNext">
@@ -89,7 +88,7 @@
             </div>       
         </article>
     
-        <section id="sectionVideos" class="section-dark">
+        <section id="sectionVideos" class="sectionDark">
             <h2 class="fadeIn">Videók</h2>
             <div id="layoutVideos" class="fadeIn">
                 <button id="buttonPrevVideos" class="buttonPrev">
@@ -109,7 +108,7 @@
             </div>
         </section>
     
-        <section id="sectionLinks" class="section-light">
+        <section id="sectionLinks" class="sectionLight">
             <h2 class="fadeIn">Kapcsolat</h2>
             <ul class="contacts">
                 <li>Bartos Anna</li>
@@ -183,8 +182,14 @@
         </section>
     </main>
 
-    <footer class="section-dark">
-        <p>4bards 2025</p>         
+    <footer class="sectionDark">
+        <p><span>&copy;</span> Boromissza András, 2025</p>   
+        <svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440.76 440.76">
+            <polygon points="333.99 183.19 338.14 183.19 370.55 340.52 366.49 340.52 307.32 340.52 302.32 340.52 284.44 183.19 289.32 183.19 333.99 183.19"/>
+            <polygon points="138.35 340.52 163.71 93.29 167.17 93.29 204.17 93.29 208.96 93.29 208.94 340.52 203.94 340.52 143.5 340.52 138.35 340.52"/>
+            <polygon points="261.75 93.29 225.03 93.29 219.3 93.29 220.4 340.52 225.99 340.52 285.1 340.52 289.79 340.52 266.12 93.29 261.75 93.29"/>
+            <polygon points="153.15 93.29 108.2 93.29 75.54 250.05 80.96 250.05 131.46 250.05 137 250.05 153.15 93.29"/>
+        </svg>              
     </footer>
 
     <script src="./menu.js"></script>

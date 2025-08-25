@@ -5,7 +5,7 @@ auth.onAuthStateChanged(user => {
 });
 
 //login
-const loginForm = document.querySelector("#loginForm");
+const loginForm = document.querySelector("form");
 
 loginForm.addEventListener("submit", (e) => {
     e.preventDefault();

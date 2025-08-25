@@ -17,7 +17,7 @@ const currImgAbout = document.getElementById("currImgAbout");
 let currIndexAbout = 0;
 
 function updateImgAbout() {
-    currImgAbout.src = "./media/rolunk/" + imgsAbout[currIndexAbout];
+    currImgAbout.src = "./media/about/" + imgsAbout[currIndexAbout];
 }
 
 buttonPrevAbout.addEventListener('click', () => {

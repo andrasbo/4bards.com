@@ -22,11 +22,12 @@ const setupEvents = (docs) => {
 
         const tickets = (event.tickets == "ingyenes" || event.tickets == "") ?
             `<a class="concertTicket" target="none" >${event.tickets}</a>` :
-            `<a class="concertTicket" href="${event.tickets}" target="_blank" >jegyek</a>`
+            `<a class="concertTicket" href="${event.tickets}" target="_blank" >
+            <span>&#x21AA;</span>jegyek</a>`
 
         const li = `
             <li class="concert fadeIn">
-                <a class="concertEvent" href="${event.facebook}" target="_blank">${yyyy}/${mm}/${dd} - ${event.city} (${event.venue})</a> 
+                <a class="concertEvent" href="${event.facebook}" target="_blank">${yyyy}.${mm}.${dd}.  |  ${event.city} (${event.venue})</a> 
                 ${tickets}
             </li>
         `;
