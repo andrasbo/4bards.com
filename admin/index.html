@@ -4,91 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../media/logos/4b-logo-poly-bg-rect.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="../media/logos/4b-logo-breakout-white.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="300x300" href="../media/logos/app-icon-breakout.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="./manifest.json">
     <title>4bards | admin</title>
-    <style>
-        @import url("../style.css");
-
-        section {
-            text-align: center;
-            padding-top: 100px;
-        }
-        h2, h3 {
-            color: var(--primary);
-        }
-        h3 {
-            padding: 20px;
-        }
-        li {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 100%;
-            text-align: left;
-        }
-        #eventEditor, #spotifyEditor, #youtubeEditor {
-            padding-bottom: 40px;
-            max-width: 275px;
-            margin: auto;
-        }
-        input, button {
-            border-radius: 5px;
-            border: solid black 1px;
-            margin: 10px auto;
-        }
-        input {
-            width: 100%;
-        }
-        button {
-            color: black;
-            background-color: white;
-            padding: 5px;
-        }
-        .saveButton {
-            background-color:rgb(213 255 190);
-        }
-        .cancelButton {
-            background-color:rgb(255, 175, 175);
-        }
-        button:hover {
-            cursor: pointer;
-        }
-        table { 
-            border-collapse: collapse; 
-            table-layout: fixed; 
-            text-align: left;
-            width: 100%;
-        }
-        table td {  
-            word-wrap: break-word; 
-        } 
-        @media screen and (max-width: 500px) {
-            h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
 </head>
 
-<body style="display: none;">    
+<body style="display: none;">
     <section>
         <h2>Bejelentkezve</h2>
         <p id="username"></p>
-        <button type="button" id="logoutButton">Kijelentkezés</button>        
+        <button type="button" id="logoutButton">Kijelentkezés</button>         
+    </section>
+    <section>       
         <h3>Események</h3>
         <table id="eventsTable">
             <tr>
                 <th></th>
-                <th style="width: 32px;"></th>
-                <th style="width: 32px;"></th>
-                <th style="width: 32px;"></th>
-                <th style="width: 32px;"></th>                
+                <th style="width: 36px;"></th>
+                <th style="width: 36px;"></th>
+                <th style="width: 40px;"></th>
+                <th style="width: 40px;"></th>                
             </tr>
             <tbody id="eventsList"></tbody>
         </table>
         <hr>
-        <button type="button" id="addEventButton" onclick="openEventEditor(0)">Új esemény</button>
+        <button type="button" id="addEventButton" onclick="openEventEditor(0)">+</button>
         <div id="eventEditor" style="display:none;">
             <form id="editEventForm">
                 <label for="date">dátum (YYYYMMDD)</label><input id="date" type="text" maxlength="8">
@@ -100,20 +43,22 @@
                 <button type="reset" id="cancelEvent" class="cancelButton"/>mégsem</button>
             </form>            
         </div>
+    </section>
+    <section>
         <h3>Releasek</h3>
         <hr>
         <table>
             <tr>
                 <th style="width: 1rem;"></th>
                 <th></th>
-                <th style="width: 32px;"></th>
-                <th style="width: 32px;"></th>
-                <th style="width: 32px;"></th>                
+                <th style="width: 36px;"></th>
+                <th style="width: 40px;"></th>
+                <th style="width: 40px;"></th>                
             </tr>
             <tbody id="spotifyList"></tbody>
         </table>
         <hr>
-        <button type="button" id="addSpotifyButton" onclick="openSpotifyEditor(0)">Új release</button>
+        <button type="button" id="addSpotifyButton" onclick="openSpotifyEditor(0)">+</button>
         <div id="spotifyEditor" style="display:none;">
             <form id="editSpotifyForm">
                 <label for="index">index</label><input id="index" type="number">
@@ -123,20 +68,22 @@
                 <button type="reset" id="cancelSpotify" class="cancelButton"/>mégsem</button>
             </form>            
         </div>
+    </section>
+    <section>
         <h3>Youtube videók</h3>
         <hr>
         <table>
             <tr>
                 <th style="width: 1rem;"></th>
                 <th></th>
-                <th style="width: 32px;"></th>
-                <th style="width: 32px;"></th>
-                <th style="width: 32px;"></th>                
+                <th style="width: 36px;"></th>
+                <th style="width: 40px;"></th>
+                <th style="width: 40px;"></th>                
             </tr>
             <tbody id="youtubeList"></tbody>
         </table>
         <hr>
-        <button type="button" id="addYoutubeButton" onclick="openYoutubeEditor(0)">Új videó</button>
+        <button type="button" id="addYoutubeButton" onclick="openYoutubeEditor(0)">+</button>
         <div id="youtubeEditor" style="display:none;">
             <form id="editYoutubeForm">
                 <label for="index">index</label><input id="index" type="number">
@@ -147,15 +94,25 @@
             </form>            
         </div>
     </section>
+    <footer class="sectionDark">
+        <p><span>&copy;</span> 2025 Boromissza András</p>   
+        <svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440.76 440.76">
+            <polygon points="333.99 183.19 338.14 183.19 370.55 340.52 366.49 340.52 307.32 340.52 302.32 340.52 284.44 183.19 289.32 183.19 333.99 183.19"/>
+            <polygon points="138.35 340.52 163.71 93.29 167.17 93.29 204.17 93.29 208.96 93.29 208.94 340.52 203.94 340.52 143.5 340.52 138.35 340.52"/>
+            <polygon points="261.75 93.29 225.03 93.29 219.3 93.29 220.4 340.52 225.99 340.52 285.1 340.52 289.79 340.52 266.12 93.29 261.75 93.29"/>
+            <polygon points="153.15 93.29 108.2 93.29 75.54 250.05 80.96 250.05 131.46 250.05 137 250.05 153.15 93.29"/>
+        </svg>              
+    </footer>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="../init-firebase.js"></script>
+    <script src="./sw-register.js"></script>
+    <script src="./admin.js"></script>
+    <script src="./adminEvents.js"></script>
+    <script src="./adminSpotify.js"></script>
+    <script src="./adminYoutube.js"></script>   
 </body>
-
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-<script src="../init-firebase.js"></script>
-<script src="./admin.js"></script>
-<script src="./adminEvents.js"></script>
-<script src="./adminSpotify.js"></script>
-<script src="./adminYoutube.js"></script>
-
 </html>

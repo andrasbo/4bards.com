@@ -4,66 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../media/4b-logo-poly-bg-rect.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../admin/admin.css">
+    <link rel="icon" href="../media/logos/4b-logo-breakout-white.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" sizes="300x300" href="../media/logos/app-icon-breakout.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="../admin/manifest.json">
     <title>4bards | login</title>
-    <style>
-        @import url("../style.css");
-
-        section {
-            text-align: center;
-            padding-top: 100px;
-        }
-        h2 {
-            color: var(--primary);
-        }
-        form {
-            padding: 40px;
-            background-color: var(--primary);
-            max-width: 275px;
-            margin: auto;
-            border-radius: 10px;
-        }
-        input, button {
-            display: block;
-            border-radius: 5px;
-            border: solid black 1px;
-            margin: 10px auto;
-        }
-        button {
-            color: black;
-            background-color: white;
-            padding: 10px;
-        }
-        @media screen and (max-width: 500px) {
-            h2 {
-                font-size: 2rem;
-            }
-            form {
-                background: none;
-            }
-            button {
-                color: white;
-                background-color: var(--primary);
-            }
-        }
-    </style>
 </head>
 
 <body>
     <section>
         <h2>Kijelentkezve</h2>
-        <form>
-            <input id="email" type="email" placeholder="email" name="email" required>
+        <form id="loginForm">
+            <input id="email" type="email" placeholder="email" name="email" required autocomplete="email">
             <input id="pwd" type="password" placeholder="jelszó" name="pwd" required>
-            <button type="submit">Belépés</button>
+            <button id="loginButton" type="submit">Belépés</button>
         </form>
     </section>
 
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="../init-firebase.js"></script>
+    <script src="../admin/sw-register.js"></script>
+    <script src="./login.js"></script>   
 </body>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-<script src="../init-firebase.js"></script>
-<script src="./login.js"></script>
-
 </html>

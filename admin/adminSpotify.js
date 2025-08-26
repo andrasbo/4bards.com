@@ -12,10 +12,10 @@ const setupSpotify = (docs) => {
         const link = (spotify.link) ?
             `
             <a href=${spotify.link} target="_blank">
-                <img src="./icons/spotifyGreen.svg" alt="spotify" style="width: 24px; height: 24px; display:block;">
+                <img src="./icons/spotifyGreen.svg" alt="spotify" class="icon">
             </a>
             ` 
-            : "<img src='./icons/spotifyGrey.svg' alt='spotify' style='width: 24px; height: 24px;'>"
+            : "<img src='./icons/spotifyGrey.svg' alt='spotify' class='icon'>"
         
         const tr = `
             <tr class="spotify" data-id="${doc.id}" data-index="${spotify.index}" data-title="${spotify.title}" data-link="${spotify.link}">
@@ -23,13 +23,13 @@ const setupSpotify = (docs) => {
                 <td>${spotify.title}</td>
                 <td>${link}</td>
                 <td>
-                    <button type="button" id="editSpotifyButton${i}" onclick="openSpotifyEditor(${i})"/>
-                        <img src="./icons/edit.svg" style="width: 16px; height: 16px;">
+                    <button type="button" id="editSpotifyButton${i}" class="editButton" onclick="openSpotifyEditor(${i})"/>
+                        <img src="./icons/edit.svg" class="buttonIcon">
                     </button>
                 </td>
                 <td>
-                    <button type="button" id="deleteButton${i}" onclick="deleteSpotify('${doc.id}')"/>
-                        <img src="./icons/delete.svg" style="width: 16px; height: 16px;">    
+                    <button type="button" id="deleteButton${i}" class="editButton" onclick="deleteSpotify('${doc.id}')"/>
+                        <img src="./icons/delete.svg" class="buttonIcon">    
                     </button>
                 </td>                
             </tr>

@@ -1,9 +1,4 @@
-@import url("../style.css");
-
-:root {
-    --primary: rgb(97, 139, 82);
-    --tertiary: rgb(63, 89, 54);
-}
+@import url("../global.css");
 
 /* page merch */
 
@@ -14,7 +9,6 @@
     object-position: center;   
 }
 #sectionLandingMerch video {
-    /* position: absolute; */
     z-index: -1;    
     margin: auto;
     overflow: hidden;

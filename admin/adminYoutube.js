@@ -12,10 +12,10 @@ const setupYoutube = (docs) => {
         const link = (youtube.link) ?
             `
             <a href=${youtube.link} target="_blank">
-                <img src="./icons/youtubeRed.svg" alt="youtube" style="width: 24px; height: 24px; display:block;">
+                <img src="./icons/youtubeRed.svg" alt="youtube" class="icon">
             </a>
             ` 
-            : "<img src='./icons/youtubeGrey.svg' alt='youtube' style='width: 24px; height: 24px;'>"
+            : "<img src='./icons/youtubeGrey.svg' alt='youtube' class='icon'>"
         
         const tr = `
             <tr class="youtube" data-id="${doc.id}" data-index="${youtube.index}" data-title="${youtube.title}" data-link="${youtube.link}">
@@ -23,13 +23,13 @@ const setupYoutube = (docs) => {
                 <td>${youtube.title}</td>
                 <td>${link}</td>
                 <td>
-                    <button type="button" id="editYoutubeButton${i}" onclick="openYoutubeEditor(${i})"/>
-                        <img src="./icons/edit.svg" style="width: 16px; height: 16px;">
+                    <button type="button" id="editYoutubeButton${i}" class="editButton" onclick="openYoutubeEditor(${i})"/>
+                        <img src="./icons/edit.svg" class="buttonIcon">
                     </button>
                 </td>
                 <td>
-                    <button type="button" id="deleteButton${i}" onclick="deleteYoutube('${doc.id}')"/>
-                        <img src="./icons/delete.svg" style="width: 16px; height: 16px;">    
+                    <button type="button" id="deleteButton${i}" class="editButton" onclick="deleteYoutube('${doc.id}')"/>
+                        <img src="./icons/delete.svg" class="buttonIcon">    
                     </button>
                 </td>                
             </tr>

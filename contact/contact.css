@@ -1,9 +1,4 @@
-@import url("../style.css");
-
-:root {
-    --primary: rgb(50, 71, 141);
-    --tertiary: rgb(29, 43, 90);
-}
+@import url("../global.css");
 
 /* page contact */
 

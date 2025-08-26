@@ -14,13 +14,13 @@ const setupEvents = (docs) => {
         const dd = event.date.substring(6,8);
         
         const facebook = (event.facebook) ?
-            `<a href=${event.facebook} target="_blank"><img src="./icons/facebookBlue.svg" style="width: 24px; height: 24px; display:block;"></a>`
-            : "<img src='./icons/facebookGrey.svg' style='width: 24px; height: 24px;'>"
+            `<a href=${event.facebook} target="_blank"><img src="./icons/facebookBlue.svg" class='icon'></a>`
+            : "<img src='./icons/facebookGrey.svg' class='icon'>"
         const tickets = () => {
             switch (event.tickets) {
-                case "" : return "<img src='./icons/ticketGrey.svg' style='width: 24px; height: 24px;'>";
-                case "ingyenes" : return "<img src='./icons/free.svg' style='width: 24px; height: 24px;'>";
-                default : return `<a href=${event.tickets} target="_blank"><img src='./icons/ticketYellow.svg' style='width: 24px; height: 24px;'></a>`
+                case "" : return "<img src='./icons/ticketGrey.svg' class='icon'>";
+                case "ingyenes" : return "<img src='./icons/free.svg' class='icon'>";
+                default : return `<a href=${event.tickets} target="_blank"><img src='./icons/ticketYellow.svg' class='icon'></a>`
             }            
         }
         const tr = `
@@ -29,13 +29,13 @@ const setupEvents = (docs) => {
                 <td>${tickets()}</td>
                 <td>${facebook}</td>
                 <td>
-                    <button type="button" id="editEventButton${i}" onclick="openEventEditor(${i})"/>
-                        <img src="./icons/edit.svg" style="width: 16px; height: 16px;">
+                    <button type="button" id="editEventButton${i}" class="editButton" onclick="openEventEditor(${i})"/>
+                        <img src="./icons/edit.svg" class="buttonIcon">
                     </button> 
                 </td>
                 <td>
-                    <button type="button" id="deleteButton${i}" onclick="deleteEvent('${doc.id}')"/>
-                        <img src="./icons/delete.svg" style="width: 16px; height: 16px;">
+                    <button type="button" id="deleteButton${i}" class="editButton" onclick="deleteEvent('${doc.id}')"/>
+                        <img src="./icons/delete.svg" class="buttonIcon">
                     </button>
                 </td>                
             </tr>

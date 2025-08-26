@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300..700&display=swap');
 
-:root {    
-    --inline-padding: 15vw;
-    --inline-padding: 15svw;
-    --block-padding: 6svh;
-
-    --primary: rgb(146, 114, 95);
+:root { 
+    --primary: rgb(153, 153, 153);
     --secondary: rgb(255, 255, 255);
-    --tertiary: rgb(78, 64, 55);
+    --tertiary: rgb(80, 80, 80);
 
     --font-family-display: "Bebas Neue";
     --font-family-text: "Quicksand";
@@ -17,7 +13,11 @@
     --font-size-large: 2rem;
     --font-size-h3: 1.2rem;            
     --font-size-main: 1rem;
-    --font-size-small: 0.8rem;
+    --font-size-small: 0.8rem;    
+    
+    --inline-padding: 15vw;
+    --inline-padding: 15svw;
+    --block-padding: 6svh;
 }
 
 

@@ -1,0 +1,115 @@
+@import url("../global.css");
+
+:root {
+    --primary: rgb(45, 164, 157);
+    --tertiary: rgb(0, 61, 57);
+}
+
+section {
+    text-align: center;
+
+}
+h2, h3 {
+    color: var(--primary);
+}
+h3 {
+    padding: 20px;
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: left;
+}
+form {
+    max-width: 275px;
+    margin: auto;
+    padding: 40px;
+}
+#loginForm {   
+    background-color: var(--primary);    
+    border-radius: 10px;
+    padding: 40px;    
+}
+input, button {
+    border-radius: 10px;
+    margin: 10px auto;
+}
+input {
+    width: 100%;
+    box-sizing: border-box;     
+    border: solid black 1px;    
+}
+#loginForm input {
+    margin: 0;
+    padding: 5px 10px;
+    border-color: var(--primary);
+}
+#loginForm input:nth-child(1) {
+    border-radius: 10px 10px 0 0;
+}
+#loginForm input:nth-child(2) {
+    border-radius: 0 0 10px 10px;
+}
+button {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px 10px;   
+}
+#loginButton {
+    border-color: var(--primary);
+    padding: 5px 20px;
+    margin: 20px 0 0 0;
+}
+#logoutButton {
+    color: white;
+    background-color: var(--primary);
+    border: solid 1px var(--primary);
+    box-shadow: 2px 2px var(--tertiary);
+}
+#addEventButton, #addSpotifyButton, #addYoutubeButton, .editButton {
+    color: black;
+    background-color: white;  
+    border: solid 1px black;
+    box-shadow: 2px 2px black;  
+    border-radius: 50%;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+}
+.saveButton {
+    background-color:rgb(213 255 190);
+}
+.cancelButton {
+    background-color:rgb(255, 175, 175);
+}
+button:hover {
+    cursor: pointer;
+    box-shadow: none;
+}
+table { 
+    border-collapse: collapse; 
+    table-layout: fixed; 
+    text-align: left;
+    width: 100%;
+}
+table td {  
+    word-wrap: break-word;
+}
+.icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+.buttonIcon {
+    width: 16px;
+    height: 16px;
+}
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 3rem;
+    }
+}

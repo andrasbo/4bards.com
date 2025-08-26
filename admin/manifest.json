@@ -1,0 +1,17 @@
+{
+  "name": "4bards admin",
+  "short_name": "4bards admin",
+  "start_url": ".",
+  "scope": "/", 
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://4bards.com/media/logos/app-icon-breakout.png",
+      "sizes": "300x300",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

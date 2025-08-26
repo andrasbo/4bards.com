@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" media="print" href="print.css">
-    <link rel="icon" href="media/logos/4b-logo-poly-bg-rect.svg" type="image/svg+xml">
+    <link rel="icon" href="media/logos/4b-logo-breakout-white.svg" type="image/svg+xml">
     <title>4bards | Kezdőlap</title>
+    <style>
+        :root {
+            --primary: rgb(146, 114, 95);
+            --tertiary: rgb(78, 64, 55);     
+        }
+    </style>
 </head>
 
 <body>
@@ -183,7 +189,7 @@
     </main>
 
     <footer class="sectionDark">
-        <p><span>&copy;</span> Boromissza András, 2025</p>   
+        <p><span>&copy;</span> 2025 Boromissza András</p>   
         <svg width="48px" height="48px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440.76 440.76">
             <polygon points="333.99 183.19 338.14 183.19 370.55 340.52 366.49 340.52 307.32 340.52 302.32 340.52 284.44 183.19 289.32 183.19 333.99 183.19"/>
             <polygon points="138.35 340.52 163.71 93.29 167.17 93.29 204.17 93.29 208.96 93.29 208.94 340.52 203.94 340.52 143.5 340.52 138.35 340.52"/>
@@ -192,16 +198,14 @@
         </svg>              
     </footer>
 
-    <script src="./menu.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="./init-firebase.js"></script>
+    <script src="./menu.js"></script>
     <script src="./events.js"></script>
     <script src="./releases.js"></script>
     <script src="./about.js"></script>
-    <script src="./videos.js"></script>     
-    
+    <script src="./videos.js"></script>    
 </body>
-
 </html>

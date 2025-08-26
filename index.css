@@ -1,9 +1,8 @@
-@import url("./style.css");
+@import url("./global.css");
 
 /* page index */
 
 #sectionLandingIndex {
-    background-image: url(./media/backgrounds/4b1_2x1_thumbnail.png);
     background-image: url(./media/backgrounds/4b2_vertical_thumbnail.png);
 }
 #sectionLandingIndex h1 {

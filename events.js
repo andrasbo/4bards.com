@@ -22,8 +22,7 @@ const setupEvents = (docs) => {
 
         const tickets = (event.tickets == "ingyenes" || event.tickets == "") ?
             `<a class="concertTicket" target="none" >${event.tickets}</a>` :
-            `<a class="concertTicket" href="${event.tickets}" target="_blank" >
-            <span>&#x21AA;</span>jegyek</a>`
+            `<a class="concertTicket" href="${event.tickets}" target="_blank" >jegyek</a>`
 
         const li = `
             <li class="concert fadeIn">
